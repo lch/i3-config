@@ -20,17 +20,9 @@ font pango:Noto Sans 11
 # Hybrid colors
 set $black	#111111
 set $white	#839496
-#set $gray	#CCCCCC
 set $gray       #444444
 set $darkgray	#2c2c2f
-#set $green 	#799F26
-#set $blue	#4D73AA
-#set $purple	#8473A7
-#set $red	#B58900
-#set $orange	#E59847
 set $orange     #ff9900
-#set $cyan	#2AA198
-#set $dark	#00252E
 set $limegreen  #9fbc00
 set $greyblue   #315858
 set $lightgray  #cccccc
@@ -183,6 +175,26 @@ mode "RESIZE" {
 }
 
 bindsym $mod+r mode "RESIZE"
+
+# move floating windows with keys
+bindsym $mod+m mode "MOVE" focus floating
+mode "MOVE" {
+    bindsym $mod+Tab focus right
+
+    bindsym Left  move left
+    bindsym Down  move down
+    bindsym Up    move up
+    bindsym Right move right
+
+    bindsym h     move left
+    bindsym j     move down
+    bindsym k     move up
+    bindsym l     move right
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 #EXAMPLE USING THE i3 bar
 # Create Log out, Reboot, Poweroff bindings
